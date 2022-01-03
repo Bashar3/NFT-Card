@@ -1,0 +1,160 @@
+/* Start Global Rules */
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(217, 54%, 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.card {
+    background-color: hsl(216, 50%, 16%);
+    width: 300px;
+    padding: 22px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+/* Image */
+.card .image {
+    position: relative;
+    cursor: pointer;
+}
+
+.card .image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--cyan);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.card .image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card .image .view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card .image:hover::before {
+    opacity: 0.5;
+}
+
+.card .image:hover .view {
+    opacity: 1;
+}
+
+/* Text */
+.card>a {
+    color: white;
+    font-size: 22px;
+    margin: 15px 0;
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card>a:hover {
+    color: var(--cyan);
+}
+
+.card>p {
+    color: var(--soft-blue);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Time */
+
+.card .time {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.card .time div {
+    display: flex;
+}
+
+.card .time div p {
+    margin-left: 10px;
+    white-space: nowrap;
+    font-size: 15px;
+}
+
+.card .time div:first-child {
+    color: var(--cyan);
+}
+
+.card .time div:last-child {
+    color: var(--soft-blue);
+}
+
+/* Footer */
+.card .foot {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.card .foot::after {
+    content: "";
+    background-color: hsl(215, 32%, 27%);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+
+.card .foot img {
+    width: 35px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.card .foot p {
+    color: var(--soft-blue);
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.card .foot p span {
+    color: white;
+}
+
+/* End Global Rules */
